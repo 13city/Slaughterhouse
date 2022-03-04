@@ -1,0 +1,10 @@
+[Unit]
+Description=Snort 3 NIDS Daemon
+After=syslog.target network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/snort -c /usr/local/etc/snort/snort.lua -s 65535 -k none -l /var/log/snort -D -i eht0 -m 0x1b -u snort -g snort
+
+[Install]
+WantedBy=multi-user.target
