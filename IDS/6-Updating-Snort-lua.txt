@@ -1,0 +1,11 @@
+# Open Snort.lua from an editor and update Set the network which you want to protect against attacks as the value for the HOME_NET variable, and point EXTERNAL_NET variable to HOME_NET variable.
+# Save and exit.
+
+
+Example
+... -- HOME_NET and EXTERNAL_NET must be set now -- setup the network addresses you are protecting
+HOME_NET = 'server_public_IP/32'
+
+-- set up the external network addresses.
+-- (leave as "any" in most situations)
+EXTERNAL_NET = 'any' EXTERNAL_NET = '!$HOME_NET' ... 
